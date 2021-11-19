@@ -308,7 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastManager: {fileID: 2099807560}
-  anchorManager: {fileID: 0}
+  anchorManager: {fileID: 2099807558}
+  planeManager: {fileID: 0}
 --- !u!1 &1598745545
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AnchorPrefab: {fileID: 0}
+  m_AnchorPrefab: {fileID: 7819232913085241329, guid: 3ecb208c84a69611caad9abf83f98898, type: 3}
 --- !u!114 &2099807559
 MonoBehaviour:
   m_ObjectHideFlags: 0
