@@ -5,6 +5,14 @@ using UnityEngine.XR.ARFoundation;
 
 public class PlacingController : MonoBehaviour {
     public ARRaycastManager raycastManager;
+    public ARAnchorManager anchorManager;
+
+    ARAnchor anchor = null;
+
+    void Input() {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +25,10 @@ public class PlacingController : MonoBehaviour {
         
     }
 
-    void Place () {
-        
+    void Place (Vector2 screenPosition) {
+        List<ARRaycastHit> results = new List<ARRaycastHit>();
+        if (raycastManager.Raycast(screenPosition, results)) {
+
+        }
     }
 }
