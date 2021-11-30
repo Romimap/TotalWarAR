@@ -3,62 +3,119 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
+
+
 public class PlacingController : MonoBehaviour {
     public ARRaycastManager raycastManager;
     public ARAnchorManager anchorManager;
-    public ARPlaneManager planeManager;
+    public Camera arcamera;
+
+    public GameObject anchorPrefab;
 
     ARAnchor anchor = null;
+    ARPlane trackedPlane = null;
 
-    void Input() {
+    GameObject[] grabbed;
+    public GameObject toPlace;
 
+    UnityEngine.XR.ARSubsystems.TrackableId GetPlaneID () {
+        ARPlane p = trackedPlane;
+            while (p.subsumedBy != null) {
+                p = p.subsumedBy;
+            }
+        trackedPlane = p;
+        return trackedPlane.trackableId;
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        grabbed = new GameObject[100];
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        if (Input.touchCount > 0) {
+            foreach (Touch t in Input.touches) {
+                Vector2 screenPoint = t.position;
+                int id = t.fingerId;
+                Debug.Log("Finger " + id + " @ " + screenPoint);
+                if (t.phase == TouchPhase.Began) {
+                    if (anchor == null) {
+                        PlaceAnchor(screenPoint); //Place Anchor
+                    } else {
+                        grabbed[id] = Grab(screenPoint); //Grab
+                        if (grabbed[id] == null) { 
+                            Place(screenPoint, toPlace); //Place if nothing grabed
+                        }
+                    }
+                } else if (t.phase == TouchPhase.Ended) { 
+                    grabbed[id] = null; //Release
+                } else if (t.phase == TouchPhase.Moved && grabbed[id] != null) {
+                    Move(screenPoint, grabbed[id]); //Move
+                }
+            }
+        }
     }
 
-    void Place (Vector2 screenPosition, GameObject prefab) {
-        if (anchor == null) {
-            Debug.LogError("Set anchor first!");
-            return;
-        }
+    GameObject Grab(Vector2 screenPoint) {
+        Debug.Log("GRAB");
+        Ray ray = arcamera.ScreenPointToRay(screenPoint);
 
         List<ARRaycastHit> results = new List<ARRaycastHit>();
-        if (raycastManager.Raycast(screenPosition, results)) {
-            foreach (ARRaycastHit result in results) {
-                if (result.trackableId == anchor.trackableId) {
-                    GameObject instance = Instantiate(prefab);
-                    instance.transform.parent = anchor.transform;
-                    instance.transform.position = result.pose.position;
+        if (raycastManager.Raycast(screenPoint, results, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon)) {
+            ARRaycastHit hit = results[0];
+            if (hit.trackableId.Equals(GetPlaneID())) {
+                RaycastHit raycastHit;
+                if (Physics.Raycast(ray, out raycastHit)) {
+                    if (raycastHit.collider.gameObject.GetComponent<Grabable>() != null) {
+                        return raycastHit.collider.gameObject;
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    void Move (Vector2 screenPoint, GameObject gameObject) {
+        Debug.Log("MOVE");
+        List<ARRaycastHit> results = new List<ARRaycastHit>();
+        if (raycastManager.Raycast(screenPoint, results, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon)) {
+            foreach(ARRaycastHit hit in results) {
+                if (hit.trackableId.Equals(GetPlaneID())) {
+                    gameObject.transform.position = hit.pose.position;
                     break;
                 }
             }
         }
     }
 
-    void SetAnchor (Vector2 screenPosition) {
-        if (anchor != null) {
-            Debug.LogError("Anchor already set !");
-            return;
-        }
-
+    void PlaceAnchor(Vector2 screenPoint) {
+        Debug.Log("PLACE ANCHOR");
         List<ARRaycastHit> results = new List<ARRaycastHit>();
-        if (raycastManager.Raycast(screenPosition, results)) {
-            ARTrackable trackable = results[0].trackable;
-            Pose pose = results[0].pose;
-            if (trackable is ARPlane) {
-                anchor = anchorManager.AttachAnchor((ARPlane)trackable, pose);
-                planeManager.detectionMode = UnityEngine.XR.ARSubsystems.PlaneDetectionMode.None; //Stop plane detection as soon as we have our anchor
+        if (raycastManager.Raycast(screenPoint, results, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon)) {
+            ARRaycastHit hit = results[0];
+            if (anchor != null) Destroy(anchor.gameObject);
+            trackedPlane = (ARPlane)hit.trackable;
+            anchor = anchorManager.AttachAnchor(trackedPlane, hit.pose);
+
+            GameObject go = Instantiate(anchorPrefab);
+            go.transform.parent = anchor.transform;
+            go.transform.localPosition = Vector3.zero;
+        }
+    }
+
+    void Place(Vector2 screenPoint, GameObject gameObject) {
+        Debug.Log("PLACE");
+        List<ARRaycastHit> results = new List<ARRaycastHit>();
+        if (raycastManager.Raycast(screenPoint, results, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon)) {
+            ARRaycastHit hit = results[0];
+            if (hit.trackableId.Equals(GetPlaneID())) {
+                GameObject toPlace = Instantiate(gameObject);
+                toPlace.transform.parent = anchor.transform;
+                toPlace.transform.position = hit.pose.position;
             }
+            
         }
     }
 }

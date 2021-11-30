@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: 6bf84b12408fa80fa888ea5444336137
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1074104884944079729
+    second: Baroon
+  - first:
+      213: 6777135768700150560
+    second: MissBaroon
+  - first:
+      213: -4355667128033859941
+    second: MisterHat
+  - first:
+      213: -3310371317074002802
+    second: LadyRed
+  - first:
+      213: 3170895003537876052
+    second: ClassyDude
+  - first:
+      213: 3355016962690213902
+    second: LadyWhite
+  - first:
+      213: 5667163670767102100
+    second: BabyCrawl
+  - first:
+      213: -1415037756896598217
+    second: Baby
+  - first:
+      213: -1274065088091201084
+    second: vx_chara03_d_8
+  - first:
+      213: 1853900932989635795
+    second: vx_chara03_d_9
+  - first:
+      213: -9055523991269144541
+    second: vx_chara03_d_10
+  - first:
+      213: 5770081912985789007
+    second: vx_chara03_d_11
+  - first:
+      213: -2502247410562258741
+    second: vx_chara03_d_12
+  - first:
+      213: -5938788362332124025
+    second: vx_chara03_d_13
+  - first:
+      213: -8680137820963577121
+    second: vx_chara03_d_14
+  - first:
+      213: -952775863105810109
+    second: vx_chara03_d_15
+  - first:
+      213: 7676838709559702530
+    second: vx_chara03_d_16
+  - first:
+      213: -9014648017884671941
+    second: vx_chara03_d_17
+  - first:
+      213: -4343717050387063141
+    second: vx_chara03_d_18
+  - first:
+      213: -3847714861899454319
+    second: vx_chara03_d_19
+  - first:
+      213: 440139594041325988
+    second: vx_chara03_d_20
+  - first:
+      213: -5601947748030460029
+    second: vx_chara03_d_21
+  - first:
+      213: -1251263637353645255
+    second: vx_chara03_d_22
+  - first:
+      213: 7716481528054885840
+    second: vx_chara03_d_23
+  - first:
+      213: 5712694220226961065
+    second: vx_chara03_d_24
+  - first:
+      213: -4847186338398407587
+    second: vx_chara03_d_25
+  - first:
+      213: -6843089311426436091
+    second: vx_chara03_d_26
+  - first:
+      213: -3378937940436027925
+    second: vx_chara03_d_27
+  - first:
+      213: 4645184758690800328
+    second: vx_chara03_d_28
+  - first:
+      213: -7322302464297501711
+    second: vx_chara03_d_29
+  - first:
+      213: 7126655044051313510
+    second: vx_chara03_d_30
+  - first:
+      213: -1979543125262081162
+    second: vx_chara03_d_31
+  - first:
+      213: 2190573189023397306
+    second: vx_chara03_d_32
+  - first:
+      213: 27509345191544143
+    second: vx_chara03_d_33
+  - first:
+      213: 6062060192788675919
+    second: vx_chara03_d_34
+  - first:
+      213: 7568680536062058176
+    second: vx_chara03_d_35
+  - first:
+      213: -1469330344318025584
+    second: vx_chara03_d_36
+  - first:
+      213: -4452035191000838676
+    second: vx_chara03_d_37
+  - first:
+      213: 3810139675927897607
+    second: vx_chara03_d_38
+  - first:
+      213: -7270250312181736291
+    second: vx_chara03_d_39
+  - first:
+      213: 3164959275065397631
+    second: vx_chara03_d_40
+  - first:
+      213: 1017863859410289375
+    second: vx_chara03_d_41
+  - first:
+      213: 606372772605716966
+    second: vx_chara03_d_42
+  - first:
+      213: 2268754137991852085
+    second: vx_chara03_d_43
+  - first:
+      213: 2453803930798571594
+    second: vx_chara03_d_44
+  - first:
+      213: -9022093236344396376
+    second: vx_chara03_d_45
+  - first:
+      213: -6941226911077676740
+    second: vx_chara03_d_46
+  - first:
+      213: -2622895771696098505
+    second: vx_chara03_d_47
+  - first:
+      213: -5763042778906618255
+    second: vx_chara03_d_48
+  - first:
+      213: -3564313640731302672
+    second: vx_chara03_d_49
+  - first:
+      213: 4561770032745249878
+    second: vx_chara03_d_50
+  - first:
+      213: 6098260117858025321
+    second: vx_chara03_d_51
+  - first:
+      213: 4620357620185678695
+    second: vx_chara03_d_52
+  - first:
+      213: -8678620337606214282
+    second: vx_chara03_d_53
+  - first:
+      213: -3623046642139658452
+    second: vx_chara03_d_54
+  - first:
+      213: 7609126394997545214
+    second: vx_chara03_d_55
+  - first:
+      213: 295662441316191298
+    second: vx_chara03_d_56
+  - first:
+      213: 4773126947102145020
+    second: vx_chara03_d_57
+  - first:
+      213: -3286080301237236631
+    second: vx_chara03_d_58
+  - first:
+      213: -8993758418043927395
+    second: vx_chara03_d_59
+  - first:
+      213: 6179314255852145071
+    second: vx_chara03_d_60
+  - first:
+      213: 7203612134212560794
+    second: vx_chara03_d_61
+  - first:
+      213: -7263112803852530383
+    second: vx_chara03_d_62
+  - first:
+      213: 2395716404415088915
+    second: vx_chara03_d_63
+  - first:
+      213: -470099620900686638
+    second: vx_chara03_d_64
+  - first:
+      213: 4642518461400312057
+    second: vx_chara03_d_65
+  - first:
+      213: 3583193214284041592
+    second: vx_chara03_d_66
+  - first:
+      213: -43619975352639880
+    second: vx_chara03_d_67
+  - first:
+      213: 8579366734190687571
+    second: vx_chara03_d_68
+  - first:
+      213: 6133135637453518220
+    second: vx_chara03_d_69
+  - first:
+      213: -8291146132819564412
+    second: vx_chara03_d_70
+  - first:
+      213: 92096276794646669
+    second: vx_chara03_d_71
+  - first:
+      213: 4812592041199689366
+    second: vx_chara03_d_72
+  - first:
+      213: 571093244090410197
+    second: vx_chara03_d_73
+  - first:
+      213: -4061194651487385766
+    second: vx_chara03_d_74
+  - first:
+      213: -6163139553379271178
+    second: vx_chara03_d_75
+  - first:
+      213: 4908905370309874536
+    second: vx_chara03_d_76
+  - first:
+      213: -4714598883739883825
+    second: vx_chara03_d_77
+  - first:
+      213: 7313249803223274928
+    second: vx_chara03_d_78
+  - first:
+      213: -7552422428578230203
+    second: vx_chara03_d_79
+  - first:
+      213: 2903638856488650439
+    second: vx_chara03_d_80
+  - first:
+      213: 2704554069834833430
+    second: vx_chara03_d_81
+  - first:
+      213: -8785905320249540732
+    second: vx_chara03_d_82
+  - first:
+      213: -1592458073340933592
+    second: vx_chara03_d_83
+  - first:
+      213: -2985725476259539342
+    second: vx_chara03_d_84
+  - first:
+      213: 5482793504102820777
+    second: vx_chara03_d_85
+  - first:
+      213: -4393022539537731796
+    second: vx_chara03_d_86
+  - first:
+      213: 6332793145476783707
+    second: vx_chara03_d_87
+  - first:
+      213: 6344738978881940496
+    second: vx_chara03_d_88
+  - first:
+      213: 5783019407088278140
+    second: vx_chara03_d_89
+  - first:
+      213: 9004199578555995225
+    second: vx_chara03_d_90
+  - first:
+      213: -8931459916372153551
+    second: vx_chara03_d_91
+  - first:
+      213: -5446023811877408841
+    second: vx_chara03_d_92
+  - first:
+      213: 4874464618648839022
+    second: vx_chara03_d_93
+  - first:
+      213: -5874714843273206163
+    second: vx_chara03_d_94
+  - first:
+      213: 1359161611182268762
+    second: vx_chara03_d_95
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Baroon
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8475694c430811f0800000000000000
+      internalID: -1074104884944079729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MissBaroon
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02367f723193d0e50800000000000000
+      internalID: 6777135768700150560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MisterHat
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9622b903df8d83c0800000000000000
+      internalID: -4355667128033859941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LadyRed
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c792383d23f02d0800000000000000
+      internalID: -3310371317074002802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClassyDude
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454afe1a438410c20800000000000000
+      internalID: 3170895003537876052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LadyWhite
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e086f84e62a6f8e20800000000000000
+      internalID: 3355016962690213902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyCrawl
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4986218255fc5ae40800000000000000
+      internalID: 5667163670767102100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baby
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737a96448a6cc5ce0800000000000000
+      internalID: -1415037756896598217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
