@@ -35,7 +35,7 @@ Shader "Custom/UnitShader" {
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            float2 uv = (IN.uv_MainTex + float2(UNITY_ACCESS_INSTANCED_PROP(Props, _Frame), UNITY_ACCESS_INSTANCED_PROP(Props, _Orientation))) / float2(3.0, 4.0);
+            float2 uv = IN.uv_MainTex + (float2(UNITY_ACCESS_INSTANCED_PROP(Props, _Frame), UNITY_ACCESS_INSTANCED_PROP(Props, _Orientation)) / float2(3, 4));
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, uv) * UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
             o.Albedo = c.rgb;

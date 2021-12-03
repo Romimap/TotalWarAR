@@ -5,13 +5,19 @@ using UnityEngine;
 public class UnitSkin : MonoBehaviour {
     private Vector3 _previousPos; 
     private float _traveledDistance = 0;
+    public enum SizePreset {SMALL, MEDIUM, BIG};
     private static GameObject s_camera = null;
+
+    public SizePreset _sizePreset = SizePreset.MEDIUM;
+    private float _sizeMul = 20;
     // Start is called before the first frame update
     void Start() {
         if (s_camera == null) {
             s_camera = GameObject.Find("AR Camera");
         }
         _previousPos = transform.position;
+        if (_sizePreset == SizePreset.SMALL) _sizeMul *= 1.80f;
+        if (_sizePreset == SizePreset.BIG)   _sizeMul *= 0.65f;
     }
 
     // Update is called once per frame
@@ -29,7 +35,8 @@ public class UnitSkin : MonoBehaviour {
     }
 
     void Animate() {
-        _traveledDistance += (_previousPos - transform.position).magnitude * 100;
+        _traveledDistance += (_previousPos - transform.position).magnitude * _sizeMul;
+        
         _previousPos = transform.position;
         int frame = (int)_traveledDistance % 3;
         float orientation = Vector3.Dot(transform.parent.forward, transform.forward);

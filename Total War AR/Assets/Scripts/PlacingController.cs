@@ -16,7 +16,9 @@ public class PlacingController : MonoBehaviour {
     ARPlane trackedPlane = null;
 
     GameObject[] grabbed;
-    public GameObject toPlace;
+    public GameObject ArmyA;
+    public GameObject ArmyB;
+    private int army = 0;
 
     UnityEngine.XR.ARSubsystems.TrackableId GetPlaneID () {
         ARPlane p = trackedPlane;
@@ -45,7 +47,11 @@ public class PlacingController : MonoBehaviour {
                     } else {
                         grabbed[id] = Grab(screenPoint); //Grab
                         if (grabbed[id] == null) { 
-                            Place(screenPoint, toPlace); //Place if nothing grabed
+                            if (army++ % 2 == 0) {
+                                Place(screenPoint, ArmyA); //Place if nothing grabed
+                            } else {
+                                Place(screenPoint, ArmyB); //Place if nothing grabed
+                            }
                         }
                     }
                 } else if (t.phase == TouchPhase.Ended) { 
