@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4387575790234611133}
   - component: {fileID: 5500304375090908745}
   - component: {fileID: 4671275637806333119}
+  - component: {fileID: 4524083504164644177}
   m_Layer: 0
-  m_Name: UnitRB
+  m_Name: OrcBrute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,6 +64,18 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 1
   m_Center: {x: 0, y: 0.015, z: 0}
+--- !u!114 &4524083504164644177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373565091451995269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f4d3bc3a6e71d01a3213af57bb5efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7003770674424249467
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,18 +140,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcf2a34214abacd68ed8ceb8fdd7ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHP: 70
+  _maxHP: 200
   _armor: 2
-  _speed: 0.1
-  _mass: 1
-  _turnSpeed: 2
+  _speed: 0.03
+  _mass: 3
+  _turnSpeed: 1
   _damage: 50
   _ranged: 0
   _range: 0.06
   _armorPenetration: 2
-  _windupSpeed: 1
-  _recoverSpeed: 1
-  _team: 0
+  _windupSpeed: 0.5
+  _recoverSpeed: 10
+  _team: 1
 --- !u!1 &8798859488332462834
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e7b599256e4df84f854a0a396176549, type: 2}
+  - {fileID: 2100000, guid: 4563dd3080401084b8e31a34bbe6e1f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -11,6 +11,7 @@
 -a="E:\Work\Unity\TotalWarAR\Total War AR\Library\PlayerScriptAssemblies\Unity.XR.ARCore.dll"
 -a="E:\Work\Unity\TotalWarAR\Total War AR\Library\PlayerScriptAssemblies\Unity.XR.ARSubsystems.dll"
 -a="E:\Work\Unity\TotalWarAR\Total War AR\Library\PlayerScriptAssemblies\Unity.XR.ARFoundation.dll"
+-a="E:\Work\Unity\TotalWarAR\Total War AR\Library\PlayerScriptAssemblies\Unity.Postprocessing.Runtime.dll"
 -a="E:\Work\Unity\TotalWarAR\Total War AR\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll"
 -s="D:\Program Files\Unity\2020.3.19f1\Editor\Data\Managed\UnityEngine"
 -s="E:\Work\Unity\TotalWarAR\Total War AR\Library\PlayerScriptAssemblies"

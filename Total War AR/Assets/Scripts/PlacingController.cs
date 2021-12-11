@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.EventSystems;
 
 
 
 public class PlacingController : MonoBehaviour {
+
+    public static PlacingController Singleton;
     public ARRaycastManager raycastManager;
     public ARAnchorManager anchorManager;
     public Camera arcamera;
@@ -16,9 +19,10 @@ public class PlacingController : MonoBehaviour {
     ARPlane trackedPlane = null;
 
     GameObject[] grabbed;
-    public GameObject ArmyA;
-    public GameObject ArmyB;
-    private int army = 0;
+    public GameObject ToPlace = null;
+
+    public GameObject UIAnchor;
+    public GameObject UIAfterAnchor;
 
     UnityEngine.XR.ARSubsystems.TrackableId GetPlaneID () {
         ARPlane p = trackedPlane;
@@ -31,7 +35,16 @@ public class PlacingController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        Singleton = this;
         grabbed = new GameObject[100];
+    }
+
+    private bool IsPointerOverUIObject (Vector2 screenPoint) {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = screenPoint;
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 
     // Update is called once per frame
@@ -40,24 +53,22 @@ public class PlacingController : MonoBehaviour {
             foreach (Touch t in Input.touches) {
                 Vector2 screenPoint = t.position;
                 int id = t.fingerId;
-                Debug.Log("Finger " + id + " @ " + screenPoint);
-                if (t.phase == TouchPhase.Began) {
-                    if (anchor == null) {
-                        PlaceAnchor(screenPoint); //Place Anchor
-                    } else {
-                        grabbed[id] = Grab(screenPoint); //Grab
-                        if (grabbed[id] == null) { 
-                            if (army++ % 2 == 0) {
-                                Place(screenPoint, ArmyA); //Place if nothing grabed
-                            } else {
-                                Place(screenPoint, ArmyB); //Place if nothing grabed
+                if (!IsPointerOverUIObject(screenPoint)) {
+                    Debug.Log("Finger " + id + " @ " + screenPoint);
+                    if (t.phase == TouchPhase.Began) {
+                        if (anchor == null) {
+                            PlaceAnchor(screenPoint); //Place Anchor
+                        } else {
+                            grabbed[id] = Grab(screenPoint); //Grab
+                            if (grabbed[id] == null) { 
+                                Place(screenPoint, ToPlace); //Place if nothing grabed
                             }
                         }
+                    } else if (t.phase == TouchPhase.Ended) { 
+                        grabbed[id] = null; //Release
+                    } else if (t.phase == TouchPhase.Moved && grabbed[id] != null) {
+                        Move(screenPoint, grabbed[id]); //Move
                     }
-                } else if (t.phase == TouchPhase.Ended) { 
-                    grabbed[id] = null; //Release
-                } else if (t.phase == TouchPhase.Moved && grabbed[id] != null) {
-                    Move(screenPoint, grabbed[id]); //Move
                 }
             }
         }
@@ -105,13 +116,26 @@ public class PlacingController : MonoBehaviour {
             trackedPlane = (ARPlane)hit.trackable;
             anchor = anchorManager.AttachAnchor(trackedPlane, hit.pose);
 
+            //Animate UI
+            StartCoroutine("AnimateUI");
+
             GameObject go = Instantiate(anchorPrefab);
             go.transform.parent = anchor.transform;
             go.transform.localPosition = Vector3.zero;
         }
     }
 
+    IEnumerator AnimateUI () {
+        PanelViewer.HideAll();
+        yield return new WaitForSeconds(1);
+        UIAnchor.SetActive(false);
+        UIAfterAnchor.SetActive(true);
+        yield return new WaitForEndOfFrame();
+        PanelViewer.OpenAnimationAll();
+    }
+
     void Place(Vector2 screenPoint, GameObject gameObject) {
+        if (gameObject == null) return;
         Debug.Log("PLACE");
         List<ARRaycastHit> results = new List<ARRaycastHit>();
         if (raycastManager.Raycast(screenPoint, results, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon)) {
@@ -123,5 +147,26 @@ public class PlacingController : MonoBehaviour {
             }
             
         }
+    }
+
+    public void SetObjectToPlace (GameObject go) {
+        ToPlace = go;
+    }
+
+    public void ResetAll () {
+        Destroy(anchor.gameObject);
+        anchor = null;
+        StartCoroutine("AnimateUIReset");
+        Unit.s_units.Clear();
+    }
+
+
+    IEnumerator AnimateUIReset () {
+        PanelViewer.HideAll();
+        yield return new WaitForSeconds(1);
+        UIAnchor.SetActive(true);
+        UIAfterAnchor.SetActive(false);
+        yield return new WaitForEndOfFrame();
+        PanelViewer.OpenAnimationAll();
     }
 }
