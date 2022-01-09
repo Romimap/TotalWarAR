@@ -151,7 +151,9 @@ MonoBehaviour:
   _armorPenetration: 1
   _windupSpeed: 0.8
   _recoverSpeed: 10
+  _projectile: {fileID: 6683481343733572846, guid: caca063a0e4b8d34aa54bff46249f0b9, type: 3}
   _team: 0
+  Cheering: 0
 --- !u!1 &8798859488332462834
 GameObject:
   m_ObjectHideFlags: 0

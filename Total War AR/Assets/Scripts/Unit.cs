@@ -26,6 +26,8 @@ public class Unit : MonoBehaviour {
     public float _windupSpeed = 1f;
     public float _recoverSpeed = 1f;
 
+    public GameObject _projectile;
+
     public int _team;
 
     public bool Alive { get { return _currentHP > 0; } }
@@ -155,7 +157,14 @@ public class Unit : MonoBehaviour {
 
     public void Attack () {
         if (_target != null && _target.Alive) {
-            _target.Damage(_damage);
+            if (_ranged) {
+                GameObject projectile = Instantiate(_projectile, transform.parent.parent);
+                projectile.transform.position = transform.position;
+                projectile.GetComponent<Projectile>()._target = _target;
+                projectile.GetComponent<Projectile>()._damage = _damage;
+            } else {
+                _target.Damage(_damage);
+            }
         }
     }
 
